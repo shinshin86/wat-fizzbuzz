@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>WAT fizzbuzz</title>
+</head>
+
+<body>
+  <script>
+    WebAssembly.instantiateStreaming(fetch("fizzbuzz.wasm"), { console })
+      .then(obj => {
+        obj.instance.exports.fizzbuzz("Fizz", "Buzz", "Fizz Buzz");
+      });
+  </script>
+</body>
+
+</html>
